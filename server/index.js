@@ -8,10 +8,10 @@ const port = process.env.PORT || 3001
 
 const app = express()
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../react-ui/build')));
 
 app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
 })
 
 const server = http.createServer(app)
