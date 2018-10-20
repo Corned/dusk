@@ -1,0 +1,23 @@
+{
+  "name": "Dusk",
+  "version": "1.0.0",
+  "description": "Discord clone",
+  "engines": {
+    "node": "10.12.x"
+  },
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Corned/dusk.git"
+  }
+}
