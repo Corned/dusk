@@ -1,0 +1,19 @@
+.ChannelGroup {
+	margin-bottom: 10px;
+}
+
+.ChannelGroup > p {
+	color: rgb(120, 120, 120);
+	margin-top: 20px;
+	text-transform: uppercase;
+	margin-bottom: 2px;
+}
+
+.ChannelGroup > p:hover {
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.ChannelGroupList {
+	margin-left: 10px;
+}

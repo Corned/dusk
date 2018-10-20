@@ -1,0 +1,17 @@
+.Message {
+	padding: 5px 0 5px 0;
+	border-top: solid 1px rgb(255, 255, 255, 0.1);
+}
+
+.Message:first-child {
+	border-top: 0;
+}
+
+.MessageAuthor {
+	color: orange;
+	font-weight: 600;
+}
+
+.MessageBody {
+	color: white;
+}

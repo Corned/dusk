@@ -1,0 +1,143 @@
+.App {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+}
+
+.ServerList {
+	background: rgb(32, 34, 37);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: space-between;
+	height: 100vh;
+	width: 70px;
+	min-width: 70px;
+	max-width: 70px;
+	z-index: 20;
+}
+
+.ServerList > * {
+	margin: 10px 10px 0 10px;
+}
+
+.Separator {
+	width: 30px;
+	height: 3px;
+	background: rgb(47, 49, 54);
+}
+
+.FriendsOnline {
+	color: rgb(96, 98, 102);
+	font-size: 11px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+
+.ServerBlob {
+	background: rgb(47, 49, 54);
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	transition: border-radius 0.5s, background-color 0.5s;
+}
+
+.ServerBlob:hover {
+	background: rgb(114, 137, 218);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.CreateServerBlob {
+	background: transparent;
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(100, 100, 100);
+	transition: border-color 0.2s;
+}
+
+.CreateServerBlob:hover {
+	border-color: rgb(240, 240, 240);
+	cursor: pointer;
+}
+
+.ServerView {
+	background: red;
+	min-height: 100vh;
+	flex-grow: 2;
+
+	display: flex;
+	flex-direction: column;
+}
+
+
+.ActionBar {
+	width: 100%;
+	height: 50px;
+	background-color: rgb(54, 57, 63);
+	box-shadow: 0 0 2px 0 rgb(0, 0, 0, 0.7);
+	z-index: 10;
+	display: flex;
+	flex-direction: row;
+}
+
+.ActionBar > .ActionBarChannelName {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: row;
+}
+
+.ActionBar > .ActionBarChannelName > * {
+	color: white;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+
+.ServerSettings {
+	background-color: rgb(47, 49, 54);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 240px;
+	height: 100%;
+	transition: background-color 0.25s;
+}
+
+.ServerSettings:hover {
+	background-color: rgb(42, 44, 49);
+	cursor: pointer;
+}
+
+.ServerSettings > p {
+	margin-left: 15px;
+	color: rgb(240, 240, 240);
+}
+
+.ServerContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex: 1;
+}
+
+.Channels {
+	user-select: none;
+	background: rgb(47, 49, 54);
+	width: 240px;
+	min-width: 240;
+	padding: 10px;
+	flex-shrink: 0;
+}
+
+.MemberList {
+	background: rgb(47, 49, 54);
+	width: 240px;
+	min-width: 240;
+	flex-shrink: 0;
+}
