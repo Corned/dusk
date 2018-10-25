@@ -12,5 +12,29 @@ html, body {
 }
 
 body {
-	background-color: red;
+	background: rgb(32, 34, 37);
+}
+
+input {
+	border: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.DuskLink {
+	color: rgb(114, 137, 218);
 }

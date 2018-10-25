@@ -1,22 +1,28 @@
 const express = require("express")
 const http = require("http")
 const socketIo = require("socket.io")
-const axios = require("axios")
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
 const path = require("path")
 
-const port = process.env.PORT || 3001
+const configuration = require("./utils/configuration")
+const establishDatabaseConnection = require("./utils/establishDatabaseConnection")
 
 const app = express()
+const server = http.createServer(app)
 
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../react-ui/build')));
+
+app.use("/api/user", require("./controllers/user"))
+app.use("/api/session", require("./controllers/session"))
 
 app.get('*', function(request, response) {
     response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
 })
 
-const server = http.createServer(app)
 const io = socketIo(server)
-
 io.on("connection", socket => {
 	console.log("New client connected!")
 	socket.emit("message", "Welcome to the chat.")
@@ -32,7 +38,13 @@ io.on("connection", socket => {
 		socket.emit("message", msg)
 		socket.broadcast.emit("message", msg)
 	})
-
 })
 
-server.listen(port, () => console.log(`Listening on port ${port}`))
+server.listen(configuration.port, () => {
+	establishDatabaseConnection(configuration.db_url)
+	console.log(`Server running on port ${configuration.port}`)
+})
+
+server.on("close", () => {
+	mongoose.connection.close()
+})

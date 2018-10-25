@@ -1,22 +1,42 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
+
+import { login, logout } from "./reducers/sessionReducer"
 
 import ServerList from "./components/ServerList"
 import ChannelList from "./components/ChannelList"
 import ChatContainer from "./components/ChatContainer"
 import MemberList from "./components/MemberList"
+
+import LoginAndRegistration from "./components/LoginAndRegistration"
+
 import "./styles/App.css"
 
 class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {}
+    this.state = { }
   }
 
   componentDidMount() {
+    const token = window.localStorage.getItem("DUSK-token")
+    if (token) {
+      this.props.login(token)
+    }
   }
 
   render() {
+    //if (this.props.session === null) {
+      return (
+        <div className="App">
+          <LoginAndRegistration/>
+        </div>
+      )
+    //}
+
+  /*
+
     return (
       <div className="App">
         <ServerList/>
@@ -38,7 +58,18 @@ class App extends Component {
         </div>
       </div>
     );
+
+  */
+
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    "session": state.session.token
+  }
+}
+
+const mapDispatchToProps = { login }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import ChannelSelector from "./ChannelSelector"
 import ChannelGroup from "./ChannelGroup"
+import LogoutButton from "./LogoutButton"
 
 
 class ChannelList extends Component {
@@ -30,7 +31,9 @@ class ChannelList extends Component {
           <ChannelSelector name="non-english"/>
           <ChannelSelector name="other-servers"/>
           <ChannelSelector name="audio-text"/>
-        </ChannelGroup>     
+        </ChannelGroup> 
+        
+        <LogoutButton/>
       </div>  
     );
   }
