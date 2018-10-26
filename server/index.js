@@ -4,6 +4,7 @@ const socketIo = require("socket.io")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const path = require("path")
+const jwt = require("jsonwebtoken")
 
 const configuration = require("./utils/configuration")
 const establishDatabaseConnection = require("./utils/establishDatabaseConnection")
@@ -24,19 +25,28 @@ app.get('*', function(request, response) {
 
 const io = socketIo(server)
 io.on("connection", socket => {
-	console.log("New client connected!")
-	socket.emit("message", "Welcome to the chat.")
-	socket.broadcast.emit("message", "New user joined the chat.")
-
-	socket.on("disconnect", () => {
-		console.log("A user left the chat.!")
-		socket.broadcast.emit("message", "A user left the chat.")
+	socket.emit("message", {
+		message: "A user has joined the chat!"
+	})
+	
+	socket.broadcast.emit("message", {
+		message: "A user has joined the chat!"
 	})
 
-	socket.on("chat_message", msg => {
-		console.log("Message: ", msg)
-		socket.emit("message", msg)
-		socket.broadcast.emit("message", msg)
+	socket.on("disconnect", () => {
+		socket.broadcast.emit("message", {
+			message: "A user has left the chat.."
+		})
+	})
+
+	socket.on("chat_message", ({ message, authentication_token }) => {
+		const decodedToken = jwt.verify(authentication_token, process.env.MY_SPECIAL_SECRET)
+		if (!decodedToken || !decodedToken.user) {
+			return
+		}
+
+		socket.emit("message", { user: decodedToken.user, message })
+		socket.broadcast.emit("message", { user: decodedToken.user, message })
 	})
 })
 

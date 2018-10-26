@@ -7,17 +7,19 @@ import { login } from "../reducers/sessionReducer"
 import "../styles/Login.css"
 import LogoutButton from "./LogoutButton";
 
+const initialState = { 
+  email: "",
+  username: "", 
+  password: "", 
+  errors: { email: null, username: null, password: null },
+  showRegisteringOptions: false,
+}
+
 class Login extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { 
-      email: "",
-      username: "", 
-      password: "", 
-      errors: { email: null, username: null, password: null },
-      showRegisteringOptions: false,
-    }
+    this.state = initialState
   }
 
   handleSubmit = async event => {
@@ -37,9 +39,10 @@ class Login extends Component {
         })
       
         this.props.login(token)
+        this.setState(initialState)
       } catch (exception) {
         const { errors } = exception.response.data
-        this.setState({ errors })
+        this.setState({ errors, password: "" })
       }
       return
     }
@@ -51,8 +54,10 @@ class Login extends Component {
       })
     
       this.props.login(token)
+      this.setState(initialState)
     } catch (exception) {
-      console.log(exception.response.data.error)
+      const { errors } = exception.response.data
+      this.setState({ errors, password: "" })
     }
   }
 
@@ -144,8 +149,6 @@ class Login extends Component {
   render() {
     return (
       <div className="LoginAndRegistrationPage">
-        <LogoutButton/>
-        {this.props.session}
         { this.state.showRegisteringOptions ? this.renderRegistrationForm() : this.renderLoginForm() }        
       </div>
     );

@@ -13,12 +13,12 @@ router.get("/", async (request, response) => {
 // new user
 router.post("/", async (request, response) => {
   const body = request.body
-  let email = body.email || ""
-  let username = body.username || ""
-  let password = body.password || ""
+  const email = body.email || ""
+  const username = body.username || ""
+  const password = body.password || ""
+  const errors = { email: null, username: null, password: null, exception: null }
 
 	try {
-    let errors = { email: null, username: null, password: null }
 
     const usersWithUsername = await User.count({ username: username })
 
@@ -44,8 +44,8 @@ router.post("/", async (request, response) => {
 		const savedUser = await user.save()
 		response.status(201).json({ user: User.format(savedUser) }) 
 	} catch (exception) {
-		console.log(exception)
-		response.status(500).json({ error: exception })
+		errors.exception = exception
+		response.status(500).json({ errors })
 	}
 })
 

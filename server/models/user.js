@@ -14,7 +14,7 @@ userSchema.statics.format = user => {
     email: user.email,
     username: user.username,
     admin: user.admin,
-    joined: user.joined
+    joined: user.joined,
   }
 }
 

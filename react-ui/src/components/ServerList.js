@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import LogoutButton from "./LogoutButton"
+
 class ServerList extends Component {
   constructor(props) {
     super(props)
@@ -14,13 +16,8 @@ class ServerList extends Component {
         <div className="Separator"/>
         <div className="ServerBlob"/>
         <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
-        <div className="ServerBlob"/>
         <div className="CreateServerBlob"/>
+        <LogoutButton/>
       </div>
     );
   }

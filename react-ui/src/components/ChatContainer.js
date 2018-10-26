@@ -1,24 +1,35 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
+
 import Message from "./Message"
 
 import "../styles/ChatContainer.css"
 
-
 import socketIOClient from "socket.io-client"
+
+const initialState = { message: "", messages: [], socket: null }
 
 class ChatContainer extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { message: "", messages: [], socket: null }
+    this.state = initialState
   }
 
   componentDidMount() {
     const endpoint = "/"
     const socket = socketIOClient(endpoint)
-    socket.on("message", data => this.setState({ messages: [ ...this.state.messages, data ] }))
+
+    socket.on("message", (data) => {
+      this.setState({ messages: [ ...this.state.messages, data ] })
+    })
 
     this.setState({ socket })
+  }
+
+  componentWillUnmount() {
+    this.state.socket.close()
+    this.setState(initialState)
   }
 
   onChange = (event) => {
@@ -28,8 +39,10 @@ class ChatContainer extends Component {
   onSubmit = (event) => {
     event.preventDefault()
 
-    this.state.socket.emit("chat_message", this.state.message)
-    console.log("EMIT")
+    this.state.socket.emit("chat_message", {
+      message: this.state.message,
+      authentication_token: this.props.session,
+    })
 
     this.setState({ message: "" })
   }
@@ -38,7 +51,7 @@ class ChatContainer extends Component {
     return (
       <div className="ChatContainer">
         <div className="ChatMessageList">
-          { this.state.messages.map(message => <Message username="Anon" body={message}/>) }
+          { this.state.messages.map(({ message, user }) => <Message username={user ? user.username : "Server"} body={message}/> )}
         </div>
         <div className="ChatInputContainer">
           <div className="Divider"/>
@@ -56,4 +69,10 @@ class ChatContainer extends Component {
   }
 }
 
-export default ChatContainer;
+const mapStateToProps = (state) => {
+  return {
+    "session": state.session.token
+  }
+}
+
+export default connect(mapStateToProps, null)(ChatContainer);

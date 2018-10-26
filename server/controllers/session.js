@@ -6,16 +6,20 @@ const User = require("../models/user")
 
 router.post("/", async (request, response) => {
   const body = request.body
+  const email = body.email || ""
+  const password = body.password || ""
+
+  const errors = { email: null, password: null }
 
   try {
-    const user = await User.findOne({ email: body.email })
+    const user = await User.findOne({ email })
     if (user === null) {
-      return response.status(401).send({ error: "invalid email or password" })
+      return response.status(400).json({ errors: { email: "Invalid username or password" } })
     }
 
-    const correctPassword = await bcrypt.compare(body.password, user.passwordHash)
+    const correctPassword = await bcrypt.compare(password, user.passwordHash)
     if (!correctPassword) {
-      return response.status(401).send({ error: "invalid email or password" })
+      return response.status(400).json({ errors: { email: "Invalid username or password" } })
     }
     
     const token = jwt.sign({
@@ -25,7 +29,9 @@ router.post("/", async (request, response) => {
     
     response.status(200).json({ token, user: User.format(user) })
   } catch (exception) {
-    response.status(500).json({ error: "logging in failed" })
+    errors.email = "Something went wrong"
+    console.log(exception)
+    response.status(500).json({ errors })
   }
 })
 
