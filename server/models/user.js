@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   username: String,
   passwordHash: String,
   admin: Boolean,
-  joined: { type: Date, default: Date.now }
+  joined: { type: Date, default: Date.now },
 })
 
 userSchema.statics.format = user => {
