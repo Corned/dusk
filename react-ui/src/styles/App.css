@@ -44,6 +44,18 @@
 	transition: border-radius 0.5s, background-color 0.5s;
 }
 
+.ServerBlob > span {
+	position: relative;
+	left: 110%;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: rgb(0, 0, 0, 0.8);
+	color: white;
+	white-space: nowrap;
+	top: 34%; /* lul */
+	padding: 5px;
+}
+
 .ServerBlob:hover {
 	background: rgb(114, 137, 218);
 	border-radius: 15px;
