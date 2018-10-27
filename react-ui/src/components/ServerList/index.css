@@ -42,6 +42,8 @@
 	cursor: pointer;
 }
 
+/* SERVER CREATION / JOINING DIALOG */
+
 .ServerCreationDialog {
 	background: rgb(240, 240, 240);
 	width: 520px;
@@ -52,6 +54,11 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
+	padding-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: hidden;
 }
 
 .ServerCreationDialog > h1 {
@@ -60,4 +67,65 @@
 	font-size: 20px;
 	color: rgb(114, 137, 218);
 	margin: 10px;
+}
+
+.ServerCreationActionSelector {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ServerCreationActionCreate, .ServerCreationActionJoin {
+	border: 1px solid rgb(0, 0, 0, 0.2);
+	width: 230px;
+	height: 290px;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.ServerCreationActionTitle {
+	width: 100%;
+	text-align: center;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	font-weight: 600;
+}
+
+.ServerCreationActionTitle.Blue {
+	color: rgb(114, 137, 218);
+}
+
+.ServerCreationActionTitle.Green {
+	color: #3CA374;
+}
+
+.ServerCreationActionDescription {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 600;
+	line-height: 18px;
+	color: rgb(0, 0, 0, 0.4);
+}
+
+.ServerCreationButton {
+	border: none;
+	border-radius: 3px;
+	padding: 13px;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	margin-top: auto;
+}
+
+.ServerCreationButton.Blue {
+	background: rgb(114, 137, 218);
+}
+
+.ServerCreationButton.Green {
+	background: #3CA374;
 }

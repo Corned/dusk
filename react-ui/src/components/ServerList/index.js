@@ -31,6 +31,22 @@ class ServerList extends Component {
           <Modal hide={this.hideServerCreationModal}>
             <div className="ServerCreationDialog">
               <h1>OH, ANOTHER SERVER HUH?</h1>
+              <div className="ServerCreationActionSelector">
+                <div className="ServerCreationActionCreate">
+                  <p className="ServerCreationActionTitle Blue">CREATE</p>
+                  <p className="ServerCreationActionDescription">
+                    Create a new server and invite your friends. It's free!
+                  </p>
+                  <button className="ServerCreationButton Blue">Create a server</button>
+                </div>
+                <div className="ServerCreationActionJoin">
+                  <p className="ServerCreationActionTitle Green">Join</p>
+                  <p className="ServerCreationActionDescription">
+                    Enter an Instant Invite and join your friend's server.
+                  </p>
+                  <button className="ServerCreationButton Green">Join a server</button>
+                </div>
+              </div>
             </div>
           </Modal>
         }
