@@ -1,0 +1,43 @@
+.ServerList {
+	background: rgb(32, 34, 37);
+	width: 70px;
+	min-width: 70px;
+	max-width: 70px;
+  z-index: 20;
+  overflow: auto;
+}
+
+.ServerListButtonContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: space-between;
+}
+
+.ServerListButtonContainer > * {
+	margin: 10px 10px 0 10px;
+  flex-shrink: 0;
+}
+
+.Separator {
+	width: 30px;
+	height: 3px;
+	background: rgb(47, 49, 54);
+}
+
+.CreateServerButton {
+	background: transparent;
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(100, 100, 100);
+	transition: border-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.CreateServerButton:hover {
+	border-color: rgb(240, 240, 240);
+	cursor: pointer;
+}

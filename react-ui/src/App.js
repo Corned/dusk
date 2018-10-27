@@ -3,12 +3,12 @@ import { connect } from "react-redux"
 
 import { login } from "./reducers/sessionReducer"
 
-import ServerList from "./components/ServerList"
-import ChatContainer from "./components/ChatContainer"
+import ServerList from "./components/ServerList/index"
+import ChatContainer from "./components/Server/ChatContainer"
 
 import LoginAndRegistration from "./components/LoginAndRegistration"
 
-import "./styles/App.css"
+import "./App.css"
 
 class App extends Component {
   constructor(props) {

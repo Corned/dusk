@@ -3,11 +3,15 @@ import { connect } from "react-redux"
 
 import Message from "./Message"
 
-import "../styles/ChatContainer.css"
+import "./ChatContainer.css"
 
 import socketIOClient from "socket.io-client"
 
-const initialState = { message: "", messages: [], socket: null }
+const initialState = { 
+  message: "", 
+  messages: [], 
+  socket: null,
+}
 
 class ChatContainer extends Component {
   constructor(props) {

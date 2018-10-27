@@ -4,8 +4,7 @@ import sessionService from "../services/sessionService"
 import userService from "../services/userService"
 import { login } from "../reducers/sessionReducer"
 
-import "../styles/Login.css"
-import LogoutButton from "./LogoutButton";
+import "./Login.css"
 
 const initialState = { 
   email: "",

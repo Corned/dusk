@@ -1,11 +1,14 @@
 import React, { Component } from "react"
-import "../styles/Message.css"
+import "./Message.css"
 
 class Message extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { username: props.username, body: props.body }
+    this.state = { 
+      username: props.username, 
+      body: props.body,
+    }
   }
 
   render() {

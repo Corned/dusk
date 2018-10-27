@@ -1,0 +1,43 @@
+.ServerButton {
+	background: rgb(47, 49, 54);
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	transition: border-radius 0.5s, background-color 0.5s;
+	-webkit-transition: border-radius 0.5s, background-color 0.5s;
+	-moz-transition: border-radius 0.5s, background-color 0.5s;
+	-ms-transition: border-radius 0.5s, background-color 0.5s;
+	-o-transition: border-radius 0.5s, background-color 0.5s;
+}
+
+.ServerButton > .ServerNameTip {
+	position: relative;
+	left: 110%;
+	margin-top: auto;
+	margin-bottom: auto;
+	background: rgb(0, 0, 0, 0.8);
+	color: white;
+	white-space: nowrap;
+	top: 34%; /* lul */
+	padding: 5px;
+}
+
+.ServerButton > .ServerNameAcronym {
+	color: white;
+	white-space: nowrap;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+.ServerButton:hover {
+	background: rgb(114, 137, 218);
+	border-radius: 15px;
+	cursor: pointer;
+}
