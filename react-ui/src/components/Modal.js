@@ -6,22 +6,19 @@ class Modal extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { 
-      open: true,
-    }
+    this.state = { }
   }
 
-  close = () => {
-    this.setState({ open: false })
+  handleHide = (event) => {
+    event.preventDefault()
+    if (event.target === event.currentTarget) {
+      this.props.hide()
+    }
   }
 
   render() {
-    if (!this.state.open) {
-      return null
-    }
-
     return (
-      <div className="Modal" onClick={this.close}>
+      <div className="Modal" onClick={this.handleHide}>
         { this.props.children }
       </div>
     );

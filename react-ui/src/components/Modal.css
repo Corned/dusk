@@ -1,7 +1,44 @@
+@keyframes backgroundFadeIn {
+  0% {
+    background: rgb(0, 0, 0, 0);
+  }
+
+  100% {
+    background: rgb(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes childrenMoveIn {
+  0% {
+    transform: translateY(-20%);
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    -o-transform: translateY(-20%);
+}
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
+
 .Modal {
   position: absolute;
-  background: rgb(0, 0, 0, 0.8);
   width: 100vw;
   height: 100vh;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: 0.20s ease-out 0s 1 backgroundFadeIn forwards;
+  -webkit-animation: 0.20s ease-out 0s 1 backgroundFadeIn forwards;
+}
+
+.Modal > * {
+  animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards;
+  -webkit-animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards;
 }

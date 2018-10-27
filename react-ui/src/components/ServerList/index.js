@@ -12,16 +12,31 @@ class ServerList extends Component {
 
     this.state = { 
       servers: [],
+      showServerCreationModal: false,
     }
+  }
+
+  showServerCreationModal = () => {
+    this.setState({ showServerCreationModal: true })
+  }
+
+  hideServerCreationModal = () => {
+    this.setState({ showServerCreationModal: false })
   }
 
   render() {
     return (
       <div className="ServerList">
-        <Modal/>
+        { this.state.showServerCreationModal && 
+          <Modal hide={this.hideServerCreationModal}>
+            <div className="ServerCreationDialog">
+              <h1>OH, ANOTHER SERVER HUH?</h1>
+            </div>
+          </Modal>
+        }
         <div className="ServerListButtonContainer">
           { this.state.servers.map(name => <ServerButton name={name}/>)}
-          <div className="CreateServerButton"/>
+          <div className="CreateServerButton" onClick={this.showServerCreationModal}/>
           <LogoutButton/>
         </div>
       </div>

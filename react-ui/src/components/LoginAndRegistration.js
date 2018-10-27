@@ -4,7 +4,7 @@ import sessionService from "../services/sessionService"
 import userService from "../services/userService"
 import { login } from "../reducers/sessionReducer"
 
-import "./Login.css"
+import "./LoginAndRegistration.css"
 
 const initialState = { 
   email: "",
