@@ -12,7 +12,7 @@ const establishDatabaseConnection = require("./utils/establishDatabaseConnection
 const app = express()
 const server = http.createServer(app)
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../react-ui/build')));
 

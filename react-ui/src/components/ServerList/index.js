@@ -77,7 +77,7 @@ class ServerList extends Component {
           <Modal hide={this.hideServerCreationModal}>
             <div className="NewServerDialog">
               <div className={NewServerDialogChooseActionClasses}>
-                <h1>OH, ANOTHER SERVER HUH?</h1>
+                <h1 className="NewServerDialogTitle Blue">OH, ANOTHER SERVER HUH?</h1>
                 <div className="NewServerActions">
                   <div className="NewServerActionCreate" onClick={this.showServerCreationTab}>
                     <p className="NewServerActionTitle Blue">CREATE</p>
@@ -96,8 +96,25 @@ class ServerList extends Component {
                 </div>
               </div>
               <div className={CreateServerDialogClasses} onClick={this.hideServerCreationTab}>
+                <h1 className="NewServerDialogTitle Blue">CREATE YOUR SERVER</h1>
               </div>
-              <div className={JoinServerDialogClasses} onClick={this.hideServerJoiningTab}>
+              <div className={JoinServerDialogClasses}>
+                <h1 className="NewServerDialogTitle Green">JOIN A SERVER</h1>
+                <p className="NewServerDialogTitleDescription">Enter an Instant Invite below to join an existing server. The invite will look something like these:</p>
+                <div className="InstantInviteExamples">
+                  <p>https://discord.gg/qJq5c</p>
+                  <p>https://discord.gg/discord-developers</p>
+                  <p>qJq5c</p>
+                </div>
+                <div className="InstantInviteInputForm">
+                  <input>
+                  </input>
+                  <p>Enter an Instant Invite</p>
+                </div>
+                <div className="JoinNewServerSubmitDiv">
+                  <button className="NewServerActionBackButton" onClick={this.hideServerJoiningTab}>Back</button>
+                  <button className="NewServerActionButton Green">Join</button>
+                </div>
               </div>
             </div>
           </Modal>

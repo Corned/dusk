@@ -54,9 +54,10 @@
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
+	user-select: none;
 }
 
-.NewServerDialogChooseAction {
+.NewServerDialogChooseAction, .CreateServerDialog, .JoinServerDialog {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -76,12 +77,19 @@
   -webkit-animation: 0.20s ease-out 0s 1 hideDefault forwards;
 }
 
-.NewServerDialogChooseAction > h1 {
+.NewServerDialogTitle {
 	width: 100%;
 	text-align: center;
 	font-size: 20px;
-	color: rgb(114, 137, 218);
 	margin: 10px;
+}
+
+.NewServerDialogTitle.Blue {
+	color: rgb(114, 137, 218);
+}
+
+.NewServerDialogTitle.Green {
+	color: #3CA374;
 }
 
 .NewServerActions {
@@ -154,14 +162,6 @@
 	transform: translateX(100%);
 }
 
-.CreateServerDialog {
-	background: blue;
-}
-
-.JoinServerDialog {
-	background: red;
-}
-
 .CreateServerDialog.show, .JoinServerDialog.show {
   animation: 0.20s ease-out 0s 1 showDialog forwards;
   -webkit-animation: 0.20s ease-out 0s 1 showDialog forwards;
@@ -170,6 +170,83 @@
 .CreateServerDialog.hidden, .JoinServerDialog.hidden {
   animation: 0.20s ease-out 0s 1 hideDialog forwards;
   -webkit-animation: 0.20s ease-out 0s 1 hideDialog forwards;
+}
+
+.NewServerDialogTitleDescription {
+	font-weight: 700;
+	text-align: center;
+	color: rgb(0, 0, 0, 0.4);
+}
+
+.InstantInviteExamples > * {
+	text-align: center;
+	font-size: 14px;
+	color: rgb(114, 137, 218);
+	font-weight: 500;
+	padding: 1px;
+}
+
+.InstantInviteInputForm {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.InstantInviteInputForm > input {
+	margin-top: -20px;
+	margin-bottom: 3px;
+	border-radius: 6px;
+	padding: 20px;
+	width: 100%;
+	background: transparent;
+	height: 25px;
+	font-size: 20px;
+	border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+	margin-left: auto;
+	margin-right: auto;
+	color: rgb(0, 0, 0, 0.7);
+	transition: 0.2s border-bottom;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+}
+
+.InstantInviteInputForm > p {
+	font-size: 12px;
+	color: rgb(0, 0, 0, 0.5);
+	font-weight: 600;
+}
+
+.InstantInviteInputForm > input:focus {
+	border-bottom: 2px solid rgb(114, 137, 218);
+}
+
+.JoinNewServerSubmitDiv {
+	background: rgb(0, 0, 0, 0.05);
+	padding: 20px 50px 20px 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 -20px -30px -20px;
+}
+
+.JoinNewServerSubmitDiv > button {
+	width: 100px;
+}
+
+.NewServerActionBackButton {
+	background: none;
+	font-weight: 700;
+	border: 2px solid transparent;
+	color: rgb(0, 0, 0, 0.4);
+	font-size: 16px;
+	transition: 0.2s border;
+}
+
+.NewServerActionBackButton:hover {
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid rgb(0, 0, 0, 0.4);
 }
 
 
