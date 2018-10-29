@@ -5,14 +5,14 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background-color: rgb(47, 49, 54);
+	background-color: rgba(47, 49, 54, 1);
 	border-radius: 10px;
-	border: 2px solid rgb(54, 57, 63);
+	border: 2px solid rgba(54, 57, 63, 1);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	border: 2px solid rgb(54, 57, 63);
-	background-color: rgb(32, 34, 37);
+	border: 2px solid rgba(54, 57, 63, 1);
+	background-color: rgba(32, 34, 37, 1);
 	border-radius: 10px;
 }

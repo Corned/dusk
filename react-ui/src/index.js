@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux"
 
-import "./Scrollbar.css"
-import "./Index.css"
+import "./Scrollbar.scss"
+import "./Index.scss"
 
 import App from "./App"
 import store from "./store"
