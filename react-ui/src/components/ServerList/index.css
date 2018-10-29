@@ -68,13 +68,13 @@
 }
 
 .NewServerDialogChooseAction.show {
-  animation: 0.20s ease-out 0s 1 showDefault forwards;
-  -webkit-animation: 0.20s ease-out 0s 1 showDefault forwards;
+  animation: 0.30s ease-in-out 0s 1 showDefault forwards;
+  -webkit-animation: 0.30s ease-in-out 0s 1 showDefault forwards;
 }
 
 .NewServerDialogChooseAction.hidden {
-  animation: 0.20s ease-out 0s 1 hideDefault forwards;
-  -webkit-animation: 0.20s ease-out 0s 1 hideDefault forwards;
+  animation: 0.30s ease-in-out 0s 1 hideDefault forwards;
+  -webkit-animation: 0.30s ease-in-out 0s 1 hideDefault forwards;
 }
 
 .NewServerDialogTitle {
@@ -103,7 +103,7 @@
 	width: 230px;
 	height: 290px;
 	border-radius: 3px;
-	box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
+	box-shadow: 0 2px 3px 0px rgb(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -163,19 +163,20 @@
 }
 
 .CreateServerDialog.show, .JoinServerDialog.show {
-  animation: 0.20s ease-out 0s 1 showDialog forwards;
-  -webkit-animation: 0.20s ease-out 0s 1 showDialog forwards;
+  animation: 0.30s ease-in-out 0s 1 showDialog forwards;
+  -webkit-animation: 0.30s ease-in-out 0s 1 showDialog forwards;
 }
 
 .CreateServerDialog.hidden, .JoinServerDialog.hidden {
-  animation: 0.20s ease-out 0s 1 hideDialog forwards;
-  -webkit-animation: 0.20s ease-out 0s 1 hideDialog forwards;
+  animation: 0.30s ease-in-out 0s 1 hideDialog forwards;
+  -webkit-animation: 0.30s ease-in-out 0s 1 hideDialog forwards;
 }
 
 .NewServerDialogTitleDescription {
 	font-weight: 700;
 	text-align: center;
 	color: rgb(0, 0, 0, 0.4);
+	word-break: none;
 }
 
 .InstantInviteExamples > * {
@@ -223,7 +224,7 @@
 }
 
 .JoinNewServerSubmitDiv {
-	background: rgb(0, 0, 0, 0.05);
+	background: rgb(0, 0, 0, 0.03);
 	padding: 20px 50px 20px 50px;
 	display: flex;
 	flex-direction: row;

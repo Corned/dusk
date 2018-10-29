@@ -95,9 +95,22 @@ class ServerList extends Component {
                   </div>
                 </div>
               </div>
-              <div className={CreateServerDialogClasses} onClick={this.hideServerCreationTab}>
+
+              <div className={CreateServerDialogClasses}>
                 <h1 className="NewServerDialogTitle Blue">CREATE YOUR SERVER</h1>
+                <p className="NewServerDialogTitleDescription">By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
+
+                <div className="InstantInviteInputForm">
+                  <input>
+                  </input>
+                  <p>Enter a server name</p>
+                </div>
+                <div className="JoinNewServerSubmitDiv">
+                  <button className="NewServerActionBackButton" onClick={this.hideServerCreationTab}>Back</button>
+                  <button className="NewServerActionButton Blue">Create</button>
+                </div>
               </div>
+
               <div className={JoinServerDialogClasses}>
                 <h1 className="NewServerDialogTitle Green">JOIN A SERVER</h1>
                 <p className="NewServerDialogTitleDescription">Enter an Instant Invite below to join an existing server. The invite will look something like these:</p>
@@ -107,8 +120,7 @@ class ServerList extends Component {
                   <p>qJq5c</p>
                 </div>
                 <div className="InstantInviteInputForm">
-                  <input>
-                  </input>
+                  <input/>
                   <p>Enter an Instant Invite</p>
                 </div>
                 <div className="JoinNewServerSubmitDiv">
