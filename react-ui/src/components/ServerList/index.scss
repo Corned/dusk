@@ -155,11 +155,15 @@
 }
 
 .CreateServerDialog, .JoinServerDialog {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	transform: translateX(100%);
+	position: relative;
+}
+
+.CreateServerDialog {
+	top: -100%;
+}
+
+.JoinServerDialog {
+	top: -200%;
 }
 
 .CreateServerDialog.show, .JoinServerDialog.show {
