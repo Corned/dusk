@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 import Message from "./Message"
 
-import "./ChatContainer.css"
+import "./ChatContainer.scss"
 
 import socketIOClient from "socket.io-client"
 

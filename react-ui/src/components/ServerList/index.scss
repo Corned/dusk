@@ -50,7 +50,7 @@
 	height: 420px;
 	z-index: 200;
 	border-radius: 5px;
-	box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.5);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
@@ -99,11 +99,11 @@
 }
 
 .NewServerActionCreate, .NewServerActionJoin {
-	border: 1px solid rgb(0, 0, 0, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	width: 230px;
 	height: 290px;
 	border-radius: 3px;
-	box-shadow: 0 2px 3px 0px rgb(0, 0, 0, 0.25);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -133,7 +133,7 @@
 	text-align: center;
 	font-weight: 600;
 	line-height: 18px;
-	color: rgb(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.4);
 }
 
 .NewServerActionButton {
@@ -175,7 +175,7 @@
 .NewServerDialogTitleDescription {
 	font-weight: 700;
 	text-align: center;
-	color: rgb(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.4);
 	word-break: none;
 }
 
@@ -202,10 +202,10 @@
 	background: transparent;
 	height: 25px;
 	font-size: 20px;
-	border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 	margin-left: auto;
 	margin-right: auto;
-	color: rgb(0, 0, 0, 0.7);
+	color: rgba(0, 0, 0, 0.7);
 	transition: 0.2s border-bottom;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -215,7 +215,7 @@
 
 .InstantInviteInputForm > p {
 	font-size: 12px;
-	color: rgb(0, 0, 0, 0.5);
+	color: rgba(0, 0, 0, 0.5);
 	font-weight: 600;
 }
 
@@ -224,7 +224,7 @@
 }
 
 .JoinNewServerSubmitDiv {
-	background: rgb(0, 0, 0, 0.03);
+	background: rgba(0, 0, 0, 0.03);
 	padding: 20px 50px 20px 50px;
 	display: flex;
 	flex-direction: row;
@@ -240,14 +240,14 @@
 	background: none;
 	font-weight: 700;
 	border: 2px solid transparent;
-	color: rgb(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.4);
 	font-size: 16px;
 	transition: 0.2s border;
 }
 
 .NewServerActionBackButton:hover {
 	border-top: 2px solid transparent;
-	border-bottom: 2px solid rgb(0, 0, 0, 0.4);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 

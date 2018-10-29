@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import "./ServerButton.css"
+import "./ServerButton.scss"
 
 class ServerButton extends Component {
   constructor(props) {

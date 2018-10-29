@@ -5,7 +5,7 @@ import ServerButton from "./ServerButton"
 import LogoutButton from "../LogoutButton"
 import Modal from "../Modal"
 
-import "./index.css"
+import "./index.scss"
 
 class ServerList extends Component {
   constructor(props) {

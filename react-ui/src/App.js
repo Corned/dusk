@@ -8,7 +8,7 @@ import ChatContainer from "./components/Server/ChatContainer"
 
 import LoginAndRegistration from "./components/LoginAndRegistration"
 
-import "./App.css"
+import "./App.scss"
 
 class App extends Component {
   constructor(props) {
