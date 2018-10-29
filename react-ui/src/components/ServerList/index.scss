@@ -53,8 +53,8 @@
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 	margin-left: auto;
 	margin-right: auto;
-	overflow: hidden;
 	user-select: none;
+	overflow: hidden;
 }
 
 .NewServerDialogChooseAction, .CreateServerDialog, .JoinServerDialog {
@@ -156,6 +156,7 @@
 
 .CreateServerDialog, .JoinServerDialog {
 	position: relative;
+	left: 100%;
 }
 
 .CreateServerDialog {
@@ -259,7 +260,7 @@
 @keyframes showDefault {
   0% {
     transform: translateX(-100%);
-}
+	}
 
   100% {
     transform: translateX(1);
@@ -276,23 +277,23 @@
 	}
 }
 
-@keyframes showDialog {
+@keyframes hideDialog {
   0% {
-    transform: translateX(100%);
-	}
-
-  100% {
-    transform: translateX(1);
-	}
+    transform: translateX(-100%);
 }
 
-@keyframes hideDialog {
+  100% {
+    transform: translateX(0);
+}
+}
+
+@keyframes showDialog {
   0% {
     transform: translateX(0%);
 	}
 
   100% {
-    transform: translateX(100%);
-	}
+    transform: translateX(-100%);
+}
 }
 
