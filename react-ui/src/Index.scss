@@ -13,26 +13,28 @@ body {
 
 input {
 	border: none;
+
+	&:focus {
+		outline: none;
+	}
 }
 
-input:focus {
-	outline: none;
-}
+button {
+	&:focus {
+		outline: none;
+	}
 
-button:focus {
-	outline: none;
-}
-
-button:hover {
-	cursor: pointer;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 a {
 	text-decoration: none;
-}
 
-a:hover {
-	text-decoration: underline;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .DuskLink {
