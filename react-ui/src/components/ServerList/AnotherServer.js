@@ -40,14 +40,6 @@ class AnotherServer extends Component {
       }
     )
 
-    const JoinServerDialogClasses = classnames(
-      "JoinServerDialog",
-      {
-        "show": this.state.showServerJoining,
-        "hidden": this.state.showServerJoining === false
-      }
-    )
-
     return (
       <div className="NewServerDialog">
         <div className={NewServerDialogChooseActionClasses}>
