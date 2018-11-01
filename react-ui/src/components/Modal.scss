@@ -15,7 +15,7 @@
     -moz-transform: translateY(-20%);
     -ms-transform: translateY(-20%);
     -o-transform: translateY(-20%);
-}
+  }
 
   100% {
     transform: translateY(0);
@@ -23,6 +23,20 @@
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
+  }
+}
+
+@keyframes childrenFadeIn {
+  0% {
+    opacity: 0
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -38,7 +52,9 @@
   -webkit-animation: 0.20s ease-out 0s 1 backgroundFadeIn forwards;
 
   & > * {
-    animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards;
-    -webkit-animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards;
+    animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards,
+               0.1s linear 0s 1 childrenFadeIn forwards;
+    -webkit-animation: 0.25s cubic-bezier(.15,.6,.08,1.29) 0s 1 childrenMoveIn forwards,
+                       0.1s linear 0s 1 childrenFadeIn forwards;
   }
 }

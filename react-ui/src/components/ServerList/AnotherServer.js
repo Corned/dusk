@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import classnames from "classnames"
 
+import JoinServerDialog from "./JoinServerDialog"
+import CreateServerDialog from "./CreateServerDialog"
+
+
 class AnotherServer extends Component {
   constructor(props) {
     super(props)
@@ -35,13 +39,6 @@ class AnotherServer extends Component {
         "hidden": this.state.showServerCreation || this.state.showServerJoining
       }
     )
-    const CreateServerDialogClasses = classnames(
-      "CreateServerDialog",
-      {
-        "show": this.state.showServerCreation,
-        "hidden": this.state.showServerCreation === false
-      }
-    )
 
     const JoinServerDialogClasses = classnames(
       "JoinServerDialog",
@@ -73,38 +70,15 @@ class AnotherServer extends Component {
           </div>
         </div>
 
-        <div className={CreateServerDialogClasses}>
-          <h1 className="NewServerDialogTitle Blue">CREATE YOUR SERVER</h1>
-          <p className="NewServerDialogTitleDescription">By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
+        <JoinServerDialog
+          show={this.state.showServerJoining}
+          f_hide={this.hideServerJoiningTab}
+        />
 
-          <div className="InstantInviteInputForm">
-            <input>
-            </input>
-            <p>Enter a server name</p>
-          </div>
-          <div className="JoinNewServerSubmitDiv">
-            <button className="NewServerActionBackButton" onClick={this.hideServerCreationTab}>Back</button>
-            <button className="NewServerActionButton Blue">Create</button>
-          </div>
-        </div>
-
-        <div className={JoinServerDialogClasses}>
-          <h1 className="NewServerDialogTitle Green">JOIN A SERVER</h1>
-          <p className="NewServerDialogTitleDescription">Enter an Instant Invite below to join an existing server. The invite will look something like these:</p>
-          <div className="InstantInviteExamples">
-            <p>https://discord.gg/qJq5c</p>
-            <p>https://discord.gg/discord-developers</p>
-            <p>qJq5c</p>
-          </div>
-          <div className="InstantInviteInputForm">
-            <input/>
-            <p>Enter an Instant Invite</p>
-          </div>
-          <div className="JoinNewServerSubmitDiv">
-            <button className="NewServerActionBackButton" onClick={this.hideServerJoiningTab}>Back</button>
-            <button className="NewServerActionButton Green">Join</button>
-          </div>
-        </div>
+        <CreateServerDialog
+          show={this.state.showServerCreation}
+          f_hide={this.hideServerCreationTab}
+        />
       </div>
     )
   }
