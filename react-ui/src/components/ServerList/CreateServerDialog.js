@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import classnames from "classnames"
 
+import "./CreateServerDialog.scss"
+
 class CreateServerDialog extends Component {
   constructor(props) {
     super(props)

@@ -4,6 +4,7 @@ import classnames from "classnames"
 import JoinServerDialog from "./JoinServerDialog"
 import CreateServerDialog from "./CreateServerDialog"
 
+import "./AnotherServer.scss"
 
 class AnotherServer extends Component {
   constructor(props) {
