@@ -34,7 +34,7 @@ class AnotherServer extends Component {
 
   render() {
     const NewServerDialogChooseActionClasses = classnames(
-      "NewServerDialogChooseAction",
+      "DialogChooseAction",
       {
         "show": this.state.showServerCreation === false || this.state.showServerJoining === false,
         "hidden": this.state.showServerCreation || this.state.showServerJoining
@@ -44,21 +44,21 @@ class AnotherServer extends Component {
     return (
       <div className="NewServerDialog">
         <div className={NewServerDialogChooseActionClasses}>
-          <h1 className="NewServerDialogTitle Blue">OH, ANOTHER SERVER HUH?</h1>
-          <div className="NewServerActions">
-            <div className="NewServerActionCreate" onClick={this.showServerCreationTab}>
-              <p className="NewServerActionTitle Blue">CREATE</p>
-              <p className="NewServerActionDescription">
+          <h1 className="DialogTitle Blue">OH, ANOTHER SERVER HUH?</h1>
+          <div className="Actions">
+            <div className="ActionCreate" onClick={this.showServerCreationTab}>
+              <p className="ActionTitle Blue">CREATE</p>
+              <p className="ActionDescription">
                 Create a new server and invite your friends. It's free!
               </p>
-              <button className="NewServerActionButton Blue">Create a server</button>
+              <button className="ActionButton Blue">Create a server</button>
             </div>
-            <div className="NewServerActionJoin" onClick={this.showServerJoiningTab}>
-              <p className="NewServerActionTitle Green">Join</p>
-              <p className="NewServerActionDescription">
+            <div className="ActionJoin" onClick={this.showServerJoiningTab}>
+              <p className="ActionTitle Green">Join</p>
+              <p className="ActionDescription">
                 Enter an Instant Invite and join your friend's server.
               </p>
-              <button className="NewServerActionButton Green">Join a server</button>
+              <button className="ActionButton Green">Join a server</button>
             </div>
           </div>
         </div>

@@ -25,8 +25,8 @@ class CreateServerDialog extends Component {
 
     return (
       <div className={CreateServerDialogClasses}>
-        <h1 className="NewServerDialogTitle Blue">CREATE YOUR SERVER</h1>
-        <p className="NewServerDialogTitleDescription">By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
+        <h1 className="DialogTitle Blue">CREATE YOUR SERVER</h1>
+        <p className="DialogTitleDescription">By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
 
         <div className="InstantInviteInputForm">
           <input>
@@ -34,8 +34,8 @@ class CreateServerDialog extends Component {
           <p>Enter a server name</p>
         </div>
         <div className="JoinNewServerSubmitDiv">
-          <button className="NewServerActionBackButton" onClick={this.props.f_hide}>Back</button>
-          <button className="NewServerActionButton Blue">Create</button>
+          <button className="ActionBackButton" onClick={this.props.f_hide}>Back</button>
+          <button className="ActionButton Blue">Create</button>
         </div>
       </div>
     )

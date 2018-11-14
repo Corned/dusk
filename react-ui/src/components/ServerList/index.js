@@ -31,6 +31,7 @@ class ServerList extends Component {
       <div className="ServerList">
         { this.state.showServerCreationModal && 
           <Modal hide={this.hideServerCreationModal}>
+            {/* AnotherServer is the dialog for creating or joining a server. */}
             <AnotherServer/>
           </Modal>
         }

@@ -1,0 +1,110 @@
+.NewServerDialog {
+	background: rgb(240, 240, 240);
+	width: 520px;
+	height: 420px;
+	z-index: 200;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+	margin-left: auto;
+	margin-right: auto;
+	user-select: none;
+  overflow: hidden;
+  
+  & > .DialogChooseAction, .CreateServerDialog, .JoinServerDialog {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 30px;
+
+    & > .DialogTitle {
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      margin: 10px;
+
+      &.Blue {
+        color: rgb(114, 137, 218);
+      }
+
+      &.Green {
+        color: #4CA374;
+      }
+    }
+  }
+
+  & > .DialogChooseAction.show {
+    animation: 0.30s ease-in-out 0s 1 showDefault forwards;
+    -webkit-animation: 0.30s ease-in-out 0s 1 showDefault forwards;
+  }
+  
+  & > .DialogChooseAction.hidden {
+    animation: 0.30s ease-in-out 0s 1 hideDefault forwards;
+    -webkit-animation: 0.30s ease-in-out 0s 1 hideDefault forwards;
+  }
+}
+
+
+.Actions {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.ActionCreate, .ActionJoin {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	width: 230px;
+	height: 290px;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.ActionTitle {
+	width: 100%;
+	text-align: center;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	font-weight: 600;
+}
+
+.ActionTitle.Blue {
+	color: rgb(114, 137, 218);
+}
+
+.ActionTitle.Green {
+	color: #3CA374;
+}
+
+.ActionDescription {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 600;
+	line-height: 18px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.ActionButton {
+	border: none;
+	border-radius: 3px;
+	padding: 13px;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	margin-top: auto;
+}
+
+.ActionButton.Blue {
+	background: rgb(114, 137, 218);
+}
+
+.ActionButton.Green {
+	background: #3CA374;
+}
