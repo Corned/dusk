@@ -4,7 +4,7 @@ import classnames from "classnames"
 import ServerButton from "./ServerButton"
 import LogoutButton from "../LogoutButton"
 import Modal from "../Modal"
-import AnotherServer from "./AnotherServer"
+import AnotherServer from "../ServerCreation"
 
 import "./index.scss"
 
@@ -13,7 +13,7 @@ class ServerList extends Component {
     super(props)
 
     this.state = { 
-      servers: [],
+      servers: ["Epic Memer Guild", "React Developers"],
       showServerCreationModal: null,
     }
   }

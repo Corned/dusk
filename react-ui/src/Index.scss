@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600,700');
+@import "variables";
 
 * {
 	margin: 0;
@@ -20,12 +21,35 @@ input {
 }
 
 button {
+	border: none;
+	border-radius: 3px;
+	padding: 13px;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+
 	&:focus {
 		outline: none;
 	}
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	&.Blue {
+		background: $blue;
+	
+		&:hover {
+			background: darken($blue, 5%);
+		}
+	}
+
+	&.Green {
+		background: $green;
+	
+		&:hover {
+			background: darken($green, 5%);
+		}
 	}
 }
 
@@ -38,5 +62,5 @@ a {
 }
 
 .DuskLink {
-	color: rgb(114, 137, 218);
+	color: $blue;
 }
