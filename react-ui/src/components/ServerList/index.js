@@ -23,20 +23,18 @@ class ServerList extends Component {
   }
 
   hideServerCreationModal = () => {
-    this.setState({ showServerCreationModal: null })
+    this.setState({ showServerCreationModal: false })
   }
 
   render() {
     return (
       <div className="ServerList">
-        { this.state.showServerCreationModal && 
-          <Modal hide={this.hideServerCreationModal}>
-            {/* AnotherServer is the dialog for creating or joining a server. */}
-            <AnotherServer/>
-          </Modal>
-        }
+        <Modal f_hide={this.hideServerCreationModal} show={this.state.showServerCreationModal}>
+          {/* AnotherServer is the dialog for creating or joining a server. */}
+          <AnotherServer/>
+        </Modal>
         <div className="ServerListButtonContainer">
-          { this.state.servers.map(name => <ServerButton name={name}/>)}
+          { this.state.servers.map(name => <ServerButton name={name}/>) }
           <div className="CreateServerButton" onClick={this.showServerCreationModal}/>
           <LogoutButton/>
         </div>

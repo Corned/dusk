@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import classnames from "classnames"
 
 import "./Modal.scss"
 
@@ -12,13 +13,21 @@ class Modal extends Component {
   handleHide = (event) => {
     event.preventDefault()
     if (event.target === event.currentTarget) {
-      this.props.hide()
+      this.props.f_hide()
     }
   }
 
   render() {
+    const classes = classnames(
+      "Modal",
+      {
+        "show": this.props.show,
+        "hide": this.props.show === false
+      }
+    )
+
     return (
-      <div className="Modal" onClick={this.handleHide}>
+      <div className={classes} onClick={this.handleHide}>
         { this.props.children }
       </div>
     );
