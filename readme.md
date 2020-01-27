@@ -1,6 +1,6 @@
 # Dusk
 
-Dusk is a chatting application based on a wildly popular chat for gamers. I am developing this for learning purposes only.
+Dusk is a chatting application based on a wildly popular chat for gamers. I am developing this for learning purposes only. Design is heavy inspired by another chatting application.
 
 ## Setting Up
 
