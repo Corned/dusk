@@ -1,6 +1,6 @@
 # Dusk
 
-Dusk is a chatting application based on a wildly popular chat for gamers. I am developing this for learning purposes only. You could call Dusk a clone.
+Dusk is a chatting application based on a wildly popular chat for gamers. I am developing this for learning purposes only.
 
 ## Setting Up
 
@@ -11,4 +11,4 @@ Dusk is a chatting application based on a wildly popular chat for gamers. I am d
 
 ## Website
 
-I will be wiping the database once in a while. [Dusk](https://dusk-6693.herokuapp.com/).
+Please don't reuse any of your passwords on this site. [Dusk](https://dusk-6693.herokuapp.com/).
